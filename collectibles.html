@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Collectibles — Clean Replica</title>
+
+<style>
+  :root{
+    --bg:#f7fbff;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#0f2e48;
+    --accent-2:#2a4d69;
+    --shadow: 0 6px 18px rgba(12,47,79,0.08);
+    --radius:10px;
+    --gap:18px;
+    --max-width:1200px;
+    --container-pad:20px;
+  }
+
+  /* Reset + base */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter, "Segoe UI", Arial, sans-serif;
+    background:var(--bg);
+    color:#0b1220;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.36;
+  }
+
+  /* Page container */
+  .site{
+    max-width:var(--max-width);
+    margin:26px auto;
+    padding:var(--container-pad);
+  }
+
+  header.site-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:18px;
+  }
+
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    text-decoration:none;
+    color:inherit;
+  }
+  .brand .logo{
+    width:56px;
+    height:56px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:700;
+    font-size:18px;
+    box-shadow:var(--shadow);
+  }
+  .brand h1{
+    margin:0;
+    font-size:18px;
+    letter-spacing:0.2px;
+  }
+  .brand p{
+    margin:0;
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  nav.top-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    padding:8px 12px;
+    border-radius:8px;
+    background:var

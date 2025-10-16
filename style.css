@@ -164,7 +164,7 @@
   margin-top: 10px;
 }
 
-.category-actions button {
+button {
   padding: 6px 12px;
   border-radius: 10px;
   border: none;
@@ -176,7 +176,7 @@
   transition: all 0.2s ease;
 }
 
-.category-actions button.delete { background: #ff4d4d; }
+button.delete { background: #ff4d4d; }
 
 @media(min-width: 600px) {
   .category-cards {

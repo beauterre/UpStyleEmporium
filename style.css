@@ -152,3 +152,46 @@
   }
   .category-list button.delete { background: #ff4d4d; }
 
+  .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #f0f3f7;
+  box-shadow: 5px 5px 10px #c1c5d0, -5px -5px 10px #ffffff;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.filter.active {
+  /* Depressed / pressed look */
+  box-shadow: inset 3px 3px 6px #c1c5d0, inset -3px -3px 6px #ffffff;
+}
+
+.filter::after {
+  content: "✔"; /* green check by default */
+  color: green;
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-size: 0.8em;
+  display: none;
+}
+
+.filter.active::after {
+  display: inline-block;
+}
+
+.filter.inactive::after {
+  content: "✖"; /* red cross */
+  color: red;
+  display: inline-block;
+}
+

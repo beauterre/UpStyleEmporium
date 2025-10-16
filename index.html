@@ -60,24 +60,57 @@
     <button class="filter">Not Stickered</button>
   </div>
 </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Item</th><th>SKU</th><th>Sticker</th><th>Category</th><th>Condition</th>
-        <th>Price</th><th>Status</th><th>Woo</th><th>Location</th><th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Replica of the Glaive</td><td>V250001</td><td>✔️</td><td>💡 Lightning</td>
-        <td>Excellent</td><td>€0</td><td>Available</td><td>❌</td><td>Aisle 3</td><td>✏️ | 🗑️</td>
-      </tr>
-      <tr>
-        <td>Miniature Porcelain Tea Set</td><td>V250002</td><td>❌</td><td>🪆 Minatures</td>
-        <td>Good</td><td>€45</td><td>Available</td><td>✔️</td><td>Shelf B</td><td>✏️ | 🗑️</td>
-      </tr>
-    </tbody>
-  </table>
+ 
+
+<div class="inventory-table">
+  <div class="inventory-row">
+    <div class="item-image">
+      <img src="https://example.com/image1.jpg" alt="Replica of the Glaive">
+    </div>
+    <div class="item-details">
+      <div class="item-name">Replica of the Glaive</div>
+      <div class="item-meta">
+        <span class="sku">SKU: V250001</span>
+        <span class="sticker">✔️ Stickered</span>
+        <span class="category">💡 Lightning</span>
+        <span class="condition">Excellent</span>
+        <span class="price">€0</span>
+        <span class="status">Available</span>
+        <span class="woo">❌ Woo</span>
+        <span class="location">Aisle 3</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="edit">✏️</button>
+      <button class="delete">🗑️</button>
+    </div>
+  </div>
+
+  <div class="inventory-row">
+    <div class="item-image">
+      <img src="https://example.com/image2.jpg" alt="Miniature Porcelain Tea Set">
+    </div>
+    <div class="item-details">
+      <div class="item-name">Miniature Porcelain Tea Set</div>
+      <div class="item-meta">
+        <span class="sku">SKU: V250002</span>
+        <span class="sticker">❌ Stickered</span>
+        <span class="category">🪆 Minatures</span>
+        <span class="condition">Good</span>
+        <span class="price">€45</span>
+        <span class="status">Available</span>
+        <span class="woo">✔️ Woo</span>
+        <span class="location">Shelf B</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="edit">✏️</button>
+      <button class="delete">🗑️</button>
+    </div>
+  </div>
+</div>
+
+
 </section>
 
 <section id="addItem">

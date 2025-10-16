@@ -43,6 +43,8 @@ function hideRequester(sectionId) {
 }
 
   function showSectionInternal(sectionId) {
+    // close all requesters
+    document.querySelectorAll('.hidden-section').forEach(s => s.style.display = 'none');
     // Hide all sections
     sections.forEach(function(sec) { sec.classList.remove('active'); });
     // Remove active class from all buttons

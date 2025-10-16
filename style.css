@@ -351,4 +351,62 @@
   }
 }
 
+/* Hidden Sections */
+.hidden-section {
+  display: none; /* hidden by default */
+  padding: 20px;
+  background: #f0f3f7;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px #c1c5d0, -5px -5px 15px #ffffff;
+  margin-top: 20px;
+}
+
+/* Forms inside hidden sections */
+.hidden-section form fieldset {
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ec;
+  box-shadow: inset 2px 2px 5px #c1c5d0, inset -2px -2px 5px #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.hidden-section form legend {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #0077ff;
+  padding: 0 4px;
+}
+
+.hidden-section form input,
+.hidden-section form select,
+.hidden-section form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: inset 2px 2px 5px #c1c5d0, inset -2px -2px 5px #ffffff;
+  background: #f0f3f7;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #0077ff;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 3px 3px 6px #c1c5d0, -3px -3px 6px #ffffff;
+}
+
+.form-actions button.cancel { background: #ff4d4d; }
+.form-actions button.add-new { background: #00b300; }
+
 

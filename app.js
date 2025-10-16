@@ -28,6 +28,31 @@
     });
   }
 
+function showSectionById(sectionId) 
+{
+  // Hide all sections
+  document.querySelectorAll('section').forEach(sec => {
+    sec.classList.remove('active');
+    sec.style.display = 'none'; // hide everything by default
+  });
+
+  // Show the requested section
+  var target = document.getElementById(sectionId);
+  if(!target) return;
+
+  // For menu sections, use .active to keep your existing styling
+  if(target.classList.contains('menu-section')) {
+    target.classList.add('active');
+    // Update menu buttons
+    document.querySelectorAll('.menubar button').forEach(btn => btn.classList.remove('active'));
+    var btn = document.getElementById(sectionId + 'Btn');
+    if(btn) btn.classList.add('active');
+  }
+
+  // For all sections (menu or hidden), display it
+  target.style.display = 'block';
+}
+
   function showSectionInternal(sectionId) {
     // Hide all sections
     sections.forEach(function(sec) { sec.classList.remove('active'); });
@@ -52,6 +77,8 @@
       showSectionInternal('dashboard');
     },
 
+  // **Expose the unified section/show function**
+    showSectionById: showSectionById,
     showSection: function(event) {
       // Determine target button id
       var btn = event.currentTarget;

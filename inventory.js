@@ -14,5 +14,5 @@ document.querySelectorAll('.filter-buttons .filter').forEach(function(btn){
 // Hookup the "Edit Filters" button
 document.getElementById('edit_filters').addEventListener('click', function() {
   // Show the filter CRUD hidden section
-  VASman.showSectionInternal('filter-crud');
+  VASman.showSectionById('filter-crud');
 });

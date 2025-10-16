@@ -355,7 +355,8 @@
 /* Hidden Sections */
 .hidden-section {
   display: none; /* hidden by default */
-  padding: 20px;
+  padding: 110px 30px 30px;
+
   background: #f0f3f7;
   border-radius: 12px;
   box-shadow: 5px 5px 15px #c1c5d0, -5px -5px 15px #ffffff;

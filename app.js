@@ -9,8 +9,8 @@
   }
 
   */
- 
-  var App = (function() {
+
+  var VASman = (function() {
   // Private variables
   var sections;
   var menuButtons;
@@ -23,7 +23,7 @@
     // Attach click listeners
     menuButtons.forEach(function(btn) {
       btn.addEventListener('click', function(e) {
-        App.showSection(e);
+        VASman.showSection(e);
       });
     });
   }
@@ -44,6 +44,7 @@
   // Public API
   return {
     init: function() {
+      console.log("DOM ready VASman initiating")
       initMenu();
       // Show default section on load
       showSectionInternal('dashboard');
@@ -61,7 +62,7 @@
   };
 })();
 
-// Initialize app on DOM ready
+// Initialize VASman on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
-  App.init();
+  VASman.init();
 });

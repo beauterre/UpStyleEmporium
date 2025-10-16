@@ -244,7 +244,7 @@ button.delete { background: #ff4d4d; }
   padding: 10px;
 }
 
-.edit_filters_container
+.edit_filters_container, .delete-cancel
 {
   text-align:right;
 }

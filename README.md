@@ -1,2 +1,3 @@
 # UpStyleEmporium
-A test, copy of the website, but cleaned up..
+crud app;
+https://beauterre.github.io/UpStyleEmporium/

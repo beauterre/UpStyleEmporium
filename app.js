@@ -28,29 +28,18 @@
     });
   }
 
-function showSectionById(sectionId) 
-{
-  // Hide all sections
-  document.querySelectorAll('section').forEach(sec => {
-    sec.classList.remove('active');
-    sec.style.display = 'none'; // hide everything by default
-  });
 
-  // Show the requested section
+// Show a hidden/requester section (does NOT hide menu sections)
+function showRequester(sectionId) {
+  document.querySelectorAll('.hidden-section').forEach(s => s.style.display = 'none');
   var target = document.getElementById(sectionId);
-  if(!target) return;
+  if(target) target.style.display = 'block';
+}
 
-  // For menu sections, use .active to keep your existing styling
-  if(target.classList.contains('menu-section')) {
-    target.classList.add('active');
-    // Update menu buttons
-    document.querySelectorAll('.menubar button').forEach(btn => btn.classList.remove('active'));
-    var btn = document.getElementById(sectionId + 'Btn');
-    if(btn) btn.classList.add('active');
-  }
-
-  // For all sections (menu or hidden), display it
-  target.style.display = 'block';
+// Hide a hidden/requester section
+function hideRequester(sectionId) {
+  var target = document.getElementById(sectionId);
+  if(target) target.style.display = 'none';
 }
 
   function showSectionInternal(sectionId) {
@@ -78,7 +67,8 @@ function showSectionById(sectionId)
     },
 
   // **Expose the unified section/show function**
-    showSectionById: showSectionById,
+    showRequester: showRequester,
+    hideRequester: hideRequester,
     showSection: function(event) {
       // Determine target button id
       var btn = event.currentTarget;

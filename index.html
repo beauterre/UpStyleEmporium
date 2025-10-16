@@ -31,6 +31,109 @@
   <button id="categoriesBtn"><i>🏷️</i> Categories</button>
 </div>
 
+
+
+<!-- Requesters are hidden Sections, that appear at the top of the page. -->
+<!-- Hidden Edit Item Section -->
+<section id="edit-item" class="hidden-section">
+  <h2><i>✏️</i> Edit Item</h2>
+  <form>
+    <fieldset>
+      <legend>Item Name</legend>
+      <input type="text" value="Replica of the Glaive">
+    </fieldset>
+    <fieldset>
+      <legend>SKU</legend>
+      <input type="text" value="V250001">
+    </fieldset>
+    <fieldset>
+      <legend>Category</legend>
+      <select>
+        <option>Lightning</option>
+        <option>Minatures</option>
+        <option>Jewelry</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Price (€)</legend>
+      <input type="number" value="0">
+    </fieldset>
+    <fieldset>
+      <legend>Condition</legend>
+      <select>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Fair</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Status</legend>
+      <select>
+        <option>Available</option>
+        <option>Sold</option>
+        <option>Reserved</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Location</legend>
+      <input type="text" value="Aisle 3">
+    </fieldset>
+    <div class="form-actions">
+      <button type="button" class="cancel">Cancel</button>
+      <button type="submit">Save Changes</button>
+    </div>
+  </form>
+</section>
+
+<!-- Hidden Edit Category Section -->
+<section id="edit-category" class="hidden-section">
+  <h2><i>✏️</i> Edit Category</h2>
+  <form>
+    <fieldset>
+      <legend>Category Name</legend>
+      <input type="text" value="Jewelry">
+    </fieldset>
+    <fieldset>
+      <legend>Description</legend>
+      <textarea>Rings, necklaces, brooches, and other jewelry items</textarea>
+    </fieldset>
+    <div class="form-actions">
+      <button type="button" class="cancel">Cancel</button>
+      <button type="submit">Save Changes</button>
+    </div>
+  </form>
+</section>
+
+<!-- Hidden Filter CRUD Section -->
+<section id="filter-crud" class="hidden-section">
+  <h2><i>🗂</i> Manage Filters</h2>
+  <ul class="filter-list">
+    <li>
+      All Conditions
+      <button class="edit">Edit ✏️</button>
+      <button class="delete">Delete 🗑️</button>
+    </li>
+    <li>
+      All Status
+      <button class="edit">Edit ✏️</button>
+      <button class="delete">Delete 🗑️</button>
+    </li>
+    <li>
+      Incomplete
+      <button class="edit">Edit ✏️</button>
+      <button class="delete">Delete 🗑️</button>
+    </li>
+    <li>
+      Not Stickered
+      <button class="edit">Edit ✏️</button>
+      <button class="delete">Delete 🗑️</button>
+    </li>
+  </ul>
+  <div class="form-actions">
+    <button type="button" class="add-new">Add New Filter ➕</button>
+  </div>
+</section>
+
 <!-- Sections -->
 <section id="dashboard" class="active">
   <div class="dashboard-cards">
@@ -225,105 +328,6 @@
   </div>
 </section>
 
-<!-- Hidden Edit Item Section -->
-<section id="edit-item" class="hidden-section">
-  <h2><i>✏️</i> Edit Item</h2>
-  <form>
-    <fieldset>
-      <legend>Item Name</legend>
-      <input type="text" value="Replica of the Glaive">
-    </fieldset>
-    <fieldset>
-      <legend>SKU</legend>
-      <input type="text" value="V250001">
-    </fieldset>
-    <fieldset>
-      <legend>Category</legend>
-      <select>
-        <option>Lightning</option>
-        <option>Minatures</option>
-        <option>Jewelry</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Price (€)</legend>
-      <input type="number" value="0">
-    </fieldset>
-    <fieldset>
-      <legend>Condition</legend>
-      <select>
-        <option>Excellent</option>
-        <option>Good</option>
-        <option>Fair</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Status</legend>
-      <select>
-        <option>Available</option>
-        <option>Sold</option>
-        <option>Reserved</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Location</legend>
-      <input type="text" value="Aisle 3">
-    </fieldset>
-    <div class="form-actions">
-      <button type="button" class="cancel">Cancel</button>
-      <button type="submit">Save Changes</button>
-    </div>
-  </form>
-</section>
-
-<!-- Hidden Edit Category Section -->
-<section id="edit-category" class="hidden-section">
-  <h2><i>✏️</i> Edit Category</h2>
-  <form>
-    <fieldset>
-      <legend>Category Name</legend>
-      <input type="text" value="Jewelry">
-    </fieldset>
-    <fieldset>
-      <legend>Description</legend>
-      <textarea>Rings, necklaces, brooches, and other jewelry items</textarea>
-    </fieldset>
-    <div class="form-actions">
-      <button type="button" class="cancel">Cancel</button>
-      <button type="submit">Save Changes</button>
-    </div>
-  </form>
-</section>
-
-<!-- Hidden Filter CRUD Section -->
-<section id="filter-crud" class="hidden-section">
-  <h2><i>🗂</i> Manage Filters</h2>
-  <ul class="filter-list">
-    <li>
-      All Conditions
-      <button class="edit">Edit ✏️</button>
-      <button class="delete">Delete 🗑️</button>
-    </li>
-    <li>
-      All Status
-      <button class="edit">Edit ✏️</button>
-      <button class="delete">Delete 🗑️</button>
-    </li>
-    <li>
-      Incomplete
-      <button class="edit">Edit ✏️</button>
-      <button class="delete">Delete 🗑️</button>
-    </li>
-    <li>
-      Not Stickered
-      <button class="edit">Edit ✏️</button>
-      <button class="delete">Delete 🗑️</button>
-    </li>
-  </ul>
-  <div class="form-actions">
-    <button type="button" class="add-new">Add New Filter ➕</button>
-  </div>
-</section>
 
 
 </body>

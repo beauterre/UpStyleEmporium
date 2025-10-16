@@ -1,92 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Collectibles — Clean Replica</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vintage & Antique Stock Manager</title>
 <style>
-  :root{
-    --bg:#f7fbff;
-    --card:#ffffff;
-    --muted:#6b7280;
-    --accent:#0f2e48;
-    --accent-2:#2a4d69;
-    --shadow: 0 6px 18px rgba(12,47,79,0.08);
-    --radius:10px;
-    --gap:18px;
-    --max-width:1200px;
-    --container-pad:20px;
+  /* Reset and basic layout */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
   }
 
-  /* Reset + base */
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter, "Segoe UI", Arial, sans-serif;
-    background:var(--bg);
-    color:#0b1220;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.36;
+  /* Topbar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1.2em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .topbar i {
+    margin-right: 10px;
   }
 
-  /* Page container */
-  .site{
-    max-width:var(--max-width);
-    margin:26px auto;
-    padding:var(--container-pad);
+  /* Menu bar */
+  .menubar {
+    display: flex;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 999;
+  }
+  .menubar button {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menubar button.active {
+    color: #00bfff; /* light blue for active tab */
+    font-weight: bold;
+  }
+  .menubar button i {
+    margin-right: 5px;
   }
 
-  header.site-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    margin-bottom:18px;
+  /* Sections */
+  section {
+    display: none;
+    padding: 120px 20px 20px; /* padding-top to account for fixed bars */
+  }
+  section.active {
+    display: block;
   }
 
-  .brand{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    text-decoration:none;
-    color:inherit;
+  /* Simple table style for Inventory */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
   }
-  .brand .logo{
-    width:56px;
-    height:56px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--accent),var(--accent-2));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-weight:700;
-    font-size:18px;
-    box-shadow:var(--shadow);
+  th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
   }
-  .brand h1{
-    margin:0;
-    font-size:18px;
-    letter-spacing:0.2px;
-  }
-  .brand p{
-    margin:0;
-    font-size:13px;
-    color:var(--muted);
-  }
+</style>
+</head>
+<body>
 
-  nav.top-actions{
-    display:flex;
-    gap:10px;
-    align-items:center;
+<!-- Topbar -->
+<div class="topbar">
+  <i>💎</i> Vintage & Antique Stock Manager
+</div>
+
+<!-- Menu bar -->
+<div class="menubar">
+  <button id="dashboardBtn" class="active" onclick="showSection('dashboard')">
+    <i>📊</i> Dashboard
+  </button>
+  <button id="inventoryBtn" onclick="showSection('inventory')">
+    <i>📦</i> Inventory
+  </button>
+  <button id="addItemBtn" onclick="showSection('addItem')">
+    <i>➕</i> Add Item
+  </button>
+  <button id="categoriesBtn" onclick="showSection('categories')">
+    <i>🏷️</i> Categories
+  </button>
+</div>
+
+<!-- Sections -->
+<section id="dashboard" class="active">
+  <h2>Dashboard</h2>
+  <p>Total Items: 181</p>
+  <p>Available: 179</p>
+  <p>Sold This Month: 1</p>
+  <p>Total Value: €21,924.63</p>
+  <p>Incomplete: 180</p>
+  <h3>Recent Activity</h3>
+  <ul>
+    <li>Added "Contemporary Wall Clock" to inventory (21/07/2025)</li>
+    <li>Added "Set of Two Miniature Dollhouse Salon" to inventory (21/07/2025)</li>
+    <li>Added "Miniature Porcelain Tea Set" to inventory (21/07/2025)</li>
+  </ul>
+</section>
+
+<section id="inventory">
+  <h2>Inventory</h2>
+  <input type="text" placeholder="Search...">
+  <div>
+    <button>All Conditions</button>
+    <button>All Status</button>
+    <button>Advanced</button>
+    <button>Incomplete</button>
+    <button>Not Stickered</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th><th>SKU</th><th>Sticker</th><th>Category</th><th>Condition</th>
+        <th>Price</th><th>Status</th><th>WooCommerce</th><th>Location</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Replica of the Glaive</td><td>V250001</td><td>Yes</td><td>Lightning</td>
+        <td>Excellent</td><td>€0</td><td>Available</td><td>Not Uploaded</td><td>Aisle 3</td><td>Edit | Delete</td>
+      </tr>
+      <tr>
+        <td>Miniature Porcelain Tea Set</td><td>V250002</td><td>No</td><td>Minatures</td>
+        <td>Good</td><td>€45</td><td>Available</td><td>Uploaded</td><td>Shelf B</td><td>Edit | Delete</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="addItem">
+  <h2>Add New Item</h2>
+  <form>
+    <label>Item Name: <input type="text" placeholder="Item Name"></label><br><br>
+    <label>Category: <input type="text" placeholder="Category"></label><br><br>
+    <label>SKU: <input type="text" placeholder="SKU Code"></label><br><br>
+    <label>Price (€): <input type="number" value="0"></label><br><br>
+    <label>Condition: <input type="text" placeholder="Condition"></label><br><br>
+    <label>Status: <input type="text" placeholder="Status"></label><br><br>
+    <button type="submit">Add Item</button>
+  </form>
+</section>
+
+<section id="categories">
+  <h2>Categories</h2>
+  <ul>
+    <li>Jewelry (1 items) <button>Edit</button> <button>Delete</button></li>
+    <li>Minatures (14 items) <button>Edit</button> <button>Delete</button></li>
+    <li>Lightning (7 items) <button>Edit</button> <button>Delete</button></li>
+    <li>Cabinets & Storage (14 items) <button>Edit</button> <button>Delete</button></li>
+    <li>Tabels (2 items) <button>Edit</button> <button>Delete</button></li>
+  </ul>
+</section>
+
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    // Remove active class from all buttons
+    document.querySelectorAll('.menubar button').forEach(btn => btn.classList.remove('active'));
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+    // Set active button
+    document.getElementById(sectionId + 'Btn').classList.add('active');
   }
-  .btn{
-    display:inline-flex;
-    gap:8px;
-    align-items:center;
-    padding:8px 12px;
-    border-radius:8px;
-    background:var
+</script>
+
+</body>
+</html>

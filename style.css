@@ -115,7 +115,7 @@
     box-shadow: inset 3px 3px 6px #c1c5d0, inset -3px -3px 6px #ffffff;
     background: #f0f3f7;
   }
-  form button {
+  button.blue {
     margin-top: 15px;
     padding: 12px 20px;
     border-radius: 12px;
@@ -127,7 +127,7 @@
     box-shadow: 3px 3px 6px #c1c5d0, -3px -3px 6px #ffffff;
     transition: all 0.2s ease;
   }
-  form button:hover { background: #005fcc; }
+  button.blue:hover { background: #005fcc; }
 
   /* Category list */
 .category-cards {

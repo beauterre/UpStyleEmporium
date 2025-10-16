@@ -13,8 +13,6 @@ document.querySelectorAll('.filter-buttons .filter').forEach(function(btn){
 
 // Hookup the "Edit Filters" button
 document.getElementById('edit_filters').addEventListener('click', function() {
-  // Hide any other hidden sections
-  VASman.Hidden.hideAll();
   // Show the filter CRUD hidden section
-  VASman.Hidden.show('filter-crud');
+  VASman.showSectionInternal('filter-crud');
 });

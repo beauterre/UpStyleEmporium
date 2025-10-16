@@ -284,7 +284,14 @@
   margin-bottom: 4px;
   padding: 0 4px;
 }
-
+#searchInput
+{
+  width:100%
+  border-radius: 10px;
+  background: #f0f3f7;
+  box-shadow: inset 2px 2px 5px #c1c5d0, inset -2px -2px 5px #ffffff;
+  padding: 8px 10px;
+}
 
 @media(min-width: 768px) {
   .item-meta fieldset {

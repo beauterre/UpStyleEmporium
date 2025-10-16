@@ -130,35 +130,61 @@
   form button:hover { background: #005fcc; }
 
   /* Category list */
-  .category-list li {
-    background: #f0f3f7;
-    margin-bottom: 10px;
-    padding: 12px 15px;
-    border-radius: 12px;
-    box-shadow: 5px 5px 10px #c1c5d0, -5px -5px 10px #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  i {
-  font-style: normal; /* remove italic */
-  }
-  .category-list button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    background: #0077ff;
-    color: #fff;
-    font-size: 0.9em;
-  }
-  .category-list button.delete { background: #ff4d4d; }
-
-  .filter-buttons {
+.category-cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-cards fieldset {
+  border: none;
+  border-radius: 12px;
+  background: #f0f3f7;
+  box-shadow: 5px 5px 10px #c1c5d0, -5px -5px 10px #ffffff;
+  padding: 15px;
+}
+
+.category-cards legend {
+  font-size: 1em;
+  font-weight: bold;
+  color: #0077ff;
+  padding: 0 5px;
+}
+
+.category-cards p {
+  margin: 6px 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.category-actions {
+  display: flex;
   gap: 10px;
+  margin-top: 10px;
+}
+
+.category-actions button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #0077ff;
+  color: #fff;
+  font-size: 0.9em;
+  box-shadow: 3px 3px 6px #c1c5d0, -3px -3px 6px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.category-actions button.delete { background: #ff4d4d; }
+
+@media(min-width: 600px) {
+  .category-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .category-cards fieldset {
+    flex: 1 1 calc(50% - 15px);
+  }
 }
 
 .filter {

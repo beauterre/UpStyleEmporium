@@ -80,6 +80,9 @@
   .card h3 { font-size: 1em; margin-bottom: 5px; color: #555; }
   .card p { font-size: 1.3em; font-weight: bold; }
 
+  h3{
+    margin-top: 1em;
+  }
   /* Tables */
   table {
     width: 100%;

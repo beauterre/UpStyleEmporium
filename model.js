@@ -16,12 +16,30 @@ VASman.Model = (function() {
       "Added 'Miniature Dollhouse Salon' to inventory (21/07/2025)"
     ]
   };
+// Private dummy data
 
+  var now = Date.now(); // current timestamp
+
+  // Categories
   var categories = [
-    { id: 1, name: "Jewelry", description: "Rings, necklaces, brooches, and other jewelry items", items: 1 },
-    { id: 2, name: "Minatures", description: "Vintage and antique miniature items", items: 14 }
+    { id: 1, name: "Jewelry", description: "Rings, necklaces, brooches, and other jewelry items", items: 1, last_edit: now },
+    { id: 2, name: "Minatures", description: "Vintage and antique miniature items", items: 14, last_edit: now }
   ];
 
+  // Inventory items
+  var inventory = [
+    { id: 1, name: "Replica of the Glaive", sku: "V250001", stickered: true, category: "Lightning", condition: "Excellent", price: 0, status: "Available", woo: false, location: "Aisle 3", last_edit: now },
+    { id: 2, name: "Miniature Porcelain Tea Set", sku: "V250002", stickered: false, category: "Minatures", condition: "Good", price: 45, status: "Available", woo: true, location: "Shelf B", last_edit: now }
+  ];
+
+  // Filters (example: conditions, status, etc.)
+  var filters = [
+    { id: 1, name: "All Conditions", type: "condition", last_edit: now },
+    { id: 2, name: "All Status", type: "status", last_edit: now },
+    { id: 3, name: "Incomplete", type: "status", last_edit: now },
+    { id: 4, name: "Not Stickered", type: "sticker", last_edit: now }
+  ];
+  
   // Public API
   return {
     init: function() {

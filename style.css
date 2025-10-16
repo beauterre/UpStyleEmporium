@@ -243,9 +243,9 @@
   padding: 10px;
 }
 
-#edit_filters
+.edit_filters_container
 {
-  float:right;
+  text-align:right;
 }
 .item-image img {
   width: 100%;

@@ -53,9 +53,10 @@
   .menubar button i { margin-right: 6px; }
 
   /* Sections */
+  
   section {
     display: none;
-    padding: 130px 30px 30px;
+    padding: 210px 30px 30px;
   }
   section.active { display: block; }
 

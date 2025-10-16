@@ -47,7 +47,7 @@
       console.log("DOM ready VASman initiating")
       initMenu();
       // init Model
-      App.Model.init();
+      VASman.Model.init();
       // Show default section on load
       showSectionInternal('dashboard');
     },

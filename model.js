@@ -26,7 +26,7 @@ VASman.Model = (function() {
   return {
     init: function() {
       // Empty for now, will later fetch or prepare data
-      console.log("init model called"),
+      console.log("init model called");
     },
     getInventory: function() { return inventory; },
     getDashboardStats: function() { return dashboardStats; },

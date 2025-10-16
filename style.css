@@ -361,7 +361,9 @@
   box-shadow: 5px 5px 15px #c1c5d0, -5px -5px 15px #ffffff;
   margin-top: 20px;
 }
-// requester filter CRUD
+
+/* requester edit category */
+
 .edit-category-form {
   display: flex;
   flex-direction: column;
@@ -436,6 +438,81 @@ textarea {
   }
 
   .form-actions button {
+    width: 100%;
+  }
+}
+
+/*  CRUD FILTERS REQUESTEr */
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.filter-list li {
+  background: #f0f3f7;
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px #c1c5d0, -5px -5px 10px #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-list .actions button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #c1c5d0, -3px -3px 6px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.filter-list .actions button.edit {
+  background: #0077ff;
+  color: #fff;
+}
+
+.filter-list .actions button.delete {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.form-actions .add-new {
+  background: #0077ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #c1c5d0, -3px -3px 6px #ffffff;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .filter-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .filter-list .actions {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+  }
+  .form-actions {
+    justify-content: stretch;
+  }
+  .form-actions .add-new {
     width: 100%;
   }
 }
